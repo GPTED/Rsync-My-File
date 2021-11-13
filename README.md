@@ -21,4 +21,4 @@ Rsync your file to your remote host via rsync, example:
 - `USER`: SSH User (*default: `root`*)
 - `PRIVATE_KEY`: SSH raw private key
 - `SOURCE`: source directory
-- `TARGET`: target directory (*default: user home*)
+- `TARGET`: target directory (*default: `Rsync-My-File` directory under user home*)

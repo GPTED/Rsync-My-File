@@ -5,19 +5,19 @@ on:
       - test
 
 jobs:
-  ssh-job:
+  rsync-job:
     runs-on: ubuntu-latest
     steps:
       - name: Create tmp file
         run: |
-          mkdir -p Rsync-My-Action
-          echo "Hello from GPTED/Rsync-My-Action at $(date)" > Rsync-My-Action/hello-from-gpted-rsync-my-action.txt
-          echo "Another Hello from GPTED/Rsync-My-Action at $(date)" > Rsync-My-Action/another-hello-from-gpted-rsync-my-action.txt
-      - name: SSH My Action
+          mkdir -p Rsync-My-File
+          echo "Hello from https://github.com/GPTED/Rsync-My-File at $(date)" > Rsync-My-File/hello-from-gpted-rsync-my-File.txt
+          echo "Another Hello from https://github.com/GPTED/Rsync-My-File at $(date)" > Rsync-My-File/another-hello-from-gpted-rsync-my-File.txt
+      - name: Rsync My File
         uses: GPTED/Rsync-My-File@test
         with:
           USER: ${{ secrets.USER }}
           HOST: ${{ secrets.HOST }}
           PORT: ${{ secrets.PORT }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
-          SOURCE: Rsync-My-Action/
+          SOURCE: Rsync-My-File/

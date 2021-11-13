@@ -18,7 +18,7 @@ fi
 
 if [ -z "$INPUT_TARGET" ]
 then
-  INPUT_TARGET="/home/${INPUT_USER}/"
+  INPUT_TARGET="/home/${INPUT_USER}/Rsync-My-File/"
 fi
 
 echo "$INPUT_PRIVATE_KEY" > "$ID_RSA"
