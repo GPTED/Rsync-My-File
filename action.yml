@@ -1,0 +1,28 @@
+name: 'Rsync My File'
+description: 'sync file via Rsync'
+author: 'qgq@gpted.com'
+inputs:
+  USER:
+    description: 'SSH username'
+    default: 'root'
+    required: false
+  HOST:
+    description: 'SSH host'
+    required: true
+  PORT:
+    description: 'SSH port'
+    default: '22'
+    required: false
+  PRIVATE_KEY:
+    description: 'SSH private key'
+    required: true
+  SOURCE:
+    description: 'Local source directory'
+    required: true
+  TARGET:
+    description: 'Remote target directory'
+    required: false
+    default: '/home/USER/'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
