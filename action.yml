@@ -22,7 +22,6 @@ inputs:
   TARGET:
     description: 'Remote target directory'
     required: false
-    default: '/home/USER/'
 runs:
   using: 'docker'
   image: 'Dockerfile'

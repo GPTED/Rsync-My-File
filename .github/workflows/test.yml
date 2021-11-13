@@ -9,15 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create tmp file
-          - run: |
-              - mkdir -p /tmp/Rsync-My-Action/
-              - echo "Hello from GPTED/Rsync-My-Action at ${date}" > /tmp/Rsync-My-Action/hello-from-gpted-rsync-my-action.txt
-              - echo "Another Hello from GPTED/Rsync-My-Action at ${date}" > /tmp/Rsync-My-Action/another-hello-from-gpted-rsync-my-action.txt
+        run: |
+          mkdir -p Rsync-My-Action
+          echo "Hello from GPTED/Rsync-My-Action at $(date)" > Rsync-My-Action/hello-from-gpted-rsync-my-action.txt
+          echo "Another Hello from GPTED/Rsync-My-Action at $(date)" > Rsync-My-Action/another-hello-from-gpted-rsync-my-action.txt
       - name: SSH My Action
-        uses: GPTED/Rsync-My-Action@test
+        uses: GPTED/Rsync-My-File@test
         with:
           USER: ${{ secrets.USER }}
           HOST: ${{ secrets.HOST }}
           PORT: ${{ secrets.PORT }}
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY}}
-          SOURCE: /tmp/Rsync-My-Action/
+          SOURCE: Rsync-My-Action/

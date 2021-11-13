@@ -27,7 +27,7 @@ chmod 700 $SSH_PATH
 chmod 600 $ID_RSA
 
 echo "========== Command =========="
-rsync -vvv -avz --delete -i $ID_RSA -e "ssh -p ${INPUT_PORT} -o StrictHostKeyChecking=no" $INPUT_SOURCE $INPUT_USER@$INPUT_HOST:$INPUT_TARGET
+rsync -vvv -avz --delete -e "ssh -i $ID_RSA -p ${INPUT_PORT} -o StrictHostKeyChecking=no" $INPUT_SOURCE $INPUT_USER@$INPUT_HOST:$INPUT_TARGET
 echo "============ End ============"
 
 # Cleanup, just in case
